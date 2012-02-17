@@ -53,8 +53,8 @@ Cu.import("resource://gre/modules/AddonManager.jsm", tmp);
 Cu.import("resource://gre/modules/XPCOMUtils.jsm", tmp);
 var { XPCOMUtils, AddonManager, Services } = tmp;
 
-var DASHBOARD_URL = "myapps.mozillalabs.com";
-var DASHBOARD_HOST = "https://myapps.mozillalabs.com";
+var DASHBOARD_URL = "https://myapps.mozillalabs.com";
+var DASHBOARD_HOST = "myapps.mozillalabs.com";
 
 exports.main = function(options, callbacks) {
   
@@ -256,6 +256,7 @@ MozAppsAPI.prototype = {
 
         console.log("Install called from " + origin + " autoInstall is: " + args._autoInstall);
         return repo.install(aWindow.location, args, recentWindow);
+<<<<<<< HEAD
       },
       getSelf: function() {
         return repo.getSelf(aWindow.location);
@@ -263,6 +264,15 @@ MozAppsAPI.prototype = {
       getInstalled: function() {
         return repo.getInstalled(aWindow.location);
       },
+=======
+      },
+      getSelf: function() {
+        return repo.getSelf(aWindow.location);
+      },
+      getInstalled: function() {
+        return repo.getInstalled(aWindow.location);
+      },
+>>>>>>> parameterize
       setMockResponse: function(response, onsuccess, onerror) {
         // We stub this method out, check for doorhanger is done in install() instead
         onsuccess();
